@@ -3,7 +3,7 @@
 ## Command
 ```bash=
 yillkid@devops:~/ntc-devops/.github/workflows$ ls
-flask.yml
+flask.yml requirements.txt
 yillkid@devops:~/ntc-devops/.github/workflows$ git add flask.yml ; git commit -m "action: flask" ; git push
 [main 7fb2c3b] action: flask
  1 file changed, 17 insertions(+)
