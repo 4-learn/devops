@@ -1,0 +1,8 @@
+---
+- hosts: server1, server2
+  remote_user: yillkid
+  name: SSH test
+  tasks:
+    - name: ssh connect
+      command: touch /tmp/ssh_test_{{ ansible_date_time.iso8601 }}
+...

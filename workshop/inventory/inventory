@@ -1,0 +1,4 @@
+[server1]
+127.0.0.1 ansible_user=yillkid ansible_ssh_private_key_file=/home/yillkid/.ssh/yillkid.pri
+[server2]
+127.0.0.1 ansible_user=yillkid ansible_ssh_private_key_file=/home/yillkid/.ssh/yillkid.pri
