@@ -1,0 +1,8 @@
+---
+- name: Install and run Flask application
+  hosts: localhost
+  become: true
+
+  roles:
+    - { role: flask-installation}
+...

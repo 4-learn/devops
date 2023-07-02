@@ -1,0 +1,33 @@
+---
+- name: Install Python 3 and pip
+  apt:
+    name: python3-pip
+    state: present
+
+- name: Install Flask
+  pip:
+    name: flask
+    state: present
+
+- name: Create Flask application directory
+  file:
+    path: /home/user/flask-app
+    state: directory
+
+- name: Create Flask application file
+  copy:
+    content: |
+      from flask import Flask
+
+      app = Flask(__name__)
+
+      @app.route('/')
+      def hello():
+          return 'Hello, Flask!'
+
+      if __name__ == '__main__':
+          app.run(debug=True)
+    dest: /home/yillkid/app.py
+
+- name: Start Flask application
+  command: python3 /home/yillkid/app.py
