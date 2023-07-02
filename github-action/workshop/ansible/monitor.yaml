@@ -1,0 +1,24 @@
+name: Daily Ansible Playbook
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  run-ansible-playbook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install Ansible
+        run: pip3 install ansible
+
+      - name: Run Ansible playbook
+        run: ansible-playbook eid-signin.yaml

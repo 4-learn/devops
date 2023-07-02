@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  remote_user: yillkid
+  name: hello world playbook
+  tasks:
+    - name: ssh test
+      command: ssh yillkid@localhost
+    - name: create a file
+      command: touch ~/test.txt
+...

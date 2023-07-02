@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  remote_user: yillkid
+  name: hello world playbook
+  tasks:
+    - name: ssh test
+      command: ssh yillkid@localhost
+...

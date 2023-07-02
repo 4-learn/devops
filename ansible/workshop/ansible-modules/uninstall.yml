@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  remote_user: yillkid
+  name: hello world playbook
+  tasks:
+    - name: ssh connect
+      command: ssh yillkid@localhost
+    - name: stop start
+      become: yes
+      become_user: root
+      ansible.builtin.service:
+        name: nginx
+        state: stopped
+    - name: ubinstall nginx
+      become: yes
+      become_user: root
+      ansible.builtin.apt:
+        name: nginx*
+        state: absent
+        autoremove: yes
+...

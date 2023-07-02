@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  remote_user: yillkid
+  name: hello world playbook
+...
