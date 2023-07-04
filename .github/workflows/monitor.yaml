@@ -1,24 +1,22 @@
-name: Daily Ansible Playbook
+name: SSH Connection
 
 on:
-  schedule:
-    - cron: "0 * * * *"
+  push:
+    branches:
+      - main
 
 jobs:
-  run-ansible-playbook:
+  ssh-connect:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.1
         with:
-          python-version: 3.x
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Install Ansible
-        run: pip3 install ansible
-
-      - name: Run Ansible playbook
-        run: ansible-playbook eid-signin.yaml
+      - name: SSH to node11.puyuma.org
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} username@node11.puyuma.org "touch ok.txt"
