@@ -1,9 +1,11 @@
-name: SSH Connection
+name: eid sigin
 
 on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "* * * * *"
 
 jobs:
   ssh-connect:
@@ -13,10 +15,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo node11.puyuma.org >> ~/.ssh/known_hosts
 
       - name: SSH to node11.puyuma.org
         run: |
-          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} username@node11.puyuma.org "touch ok.txt"
+          ssh -v -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@node11.puyuma.org -p 2222 "ansible-playbook ansible-playbook/eid-signin.yaml"
