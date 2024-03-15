@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Display the IP address of the remote host
+      ansible.builtin.command: hostname -I
+      register: ip_address
+
+    - name: Print the IP address
+      debug:
+        msg: "The IP address of the remote host is {{ ip_address }}"
+...
