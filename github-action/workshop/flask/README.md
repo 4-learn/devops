@@ -1,20 +1,33 @@
-# Answer
+## 搭配
+本解答需要運作在 https://github.com/4-learn/devops-flask-demo-site 中
 
-## Command
+## 流程
+
+#### 將 flask.yml  requirements.txt 兩個檔案，複製到 https://github.com/4-learn/devops-flask-demo-site 中:
 ```bash=
-yillkid@devops:~/ntc-devops/.github/workflows$ ls
-flask.yml requirements.txt
-yillkid@devops:~/ntc-devops/.github/workflows$ git add flask.yml ; git commit -m "action: flask" ; git push
-[main 7fb2c3b] action: flask
- 1 file changed, 17 insertions(+)
- create mode 100644 .github/workflows/flask.yml
-Enumerating objects: 6, done.
-Counting objects: 100% (6/6), done.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (5/5), 583 bytes | 145.00 KiB/s, done.
-Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
-To https://github.com/yillkid/ntc-devops
-   0cffb86..7fb2c3b  main -> main
+$ rm ../../../../devops-flask-demo-site/.github/workflows/*
+$ /devops/github-action/workshop/flask$ cp flask.yml  requirements.txt  ../../../../devops-flask-demo-site/.github/workflows/
+```
+
+#### 到 https://github.com/4-learn/devops-flask-demo-site 進行 push
+```bash=
+$ cd ../../../../devops-flask-demo-site/
+$ ls .github/workflows/
+flask.yml  requirements.txt
+ubuntu@slave1:~/workspace/devops-flask-demo-site$ git add . ; git commit -m "workshop: flask" ; git push
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+Enumerating objects: 14, done.
+Counting objects: 100% (12/12), done.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 979 bytes | 326.00 KiB/s, done.
+Total 8 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/4-learn/devops-flask-demo-site
+   20130f4..805945f  master -> master
 ```
 
 ## GitHub
