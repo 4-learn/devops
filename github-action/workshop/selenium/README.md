@@ -12,5 +12,5 @@ $ $ cp -rf check_website.yml ../../../../devops-flask-demo-site/.github/workflow
 
 ## GitHub Action
 - [push event log](https://github.com/4-learn/devops-flask-demo-site/actions/runs/8309011499)
-- [cron log]()
+- [cron log](https://github.com/4-learn/devops-flask-demo-site/actions/runs/8309064950)
 
