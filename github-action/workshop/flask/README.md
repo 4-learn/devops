@@ -31,5 +31,6 @@ To https://github.com/4-learn/devops-flask-demo-site
 ```
 
 ## GitHub
+- [Reference GitHub Action Job](https://github.com/4-learn/devops-flask-demo-site/actions/runs/8308120346/job/22738010089)
 ![image](https://github.com/yillkid/ntc-devops/assets/185872/19d09906-04d4-4752-ba01-db90dda3bb59)
 ![image](https://github.com/yillkid/ntc-devops/assets/185872/21da6be7-545a-47d2-98e4-2dedf2ca5e1d)
