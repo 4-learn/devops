@@ -11,7 +11,7 @@
 
 - name: Create Flask application directory
   file:
-    path: /home/user/flask-app
+    path: /home/yillkid/flask-app
     state: directory
 
 - name: Create Flask application file
@@ -27,7 +27,7 @@
 
       if __name__ == '__main__':
           app.run(debug=True)
-    dest: /home/yillkid/app.py
+    dest: /home/yillkid/flask-app/app.py
 
 - name: Start Flask application
-  command: python3 /home/yillkid/app.py
+  command: python3 /home/yillkid/falsk-app/app.py
